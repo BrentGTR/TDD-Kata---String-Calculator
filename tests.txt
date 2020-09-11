@@ -1,0 +1,48 @@
+————————————————————————————————
+Start with the simplest test case of an empty string and move to one and two numbers
+@Test
+public void testEmptyString() {
+
+@Test
+public void testOneNumber() {
+
+@Test
+public void testTwoNumbers(){
+————————————————————————————————
+Allow the Add method to handle an unknown amount of numbers
+@Test
+public void testMultipleNumbers(){
+————————————————————————————————
+Allow the Add method to handle new lines between numbers (instead of commas).
+the following input is ok: “1\n2,3” (will equal 6)
+@Test
+    public void testNewLine(){
+——————————————————————————————-
+Support different delimiters
+to change a delimiter, the beginning of the string will contain a separate line that looks like this: “//[delimiter]\n[numbers…]” for example “//;\n1;2” should return three where the default delimiter is ‘;’ .
+the first line is optional. all existing scenarios should still be supported
+@Test
+public void testOtherDelimiter(){
+————————————————————————————————
+Calling Add with a negative number will throw an exception “negatives not allowed” - and the negative that was passed.
+if there are multiple negatives, show all of them in the exception message. (1, -2) (-1, -2), (-1, 2)
+@Test
+public void testNegativeNumber(){
+————————————————————————————————
+
+————————————————————————————————
+Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
+@Test
+public void testOverThousand(){
+————————————————————————————————
+Delimiters can be of any length with the following format: “//[delimiter]\n” for example: ("//[***]\n1***2***3") should return 6
+@Test
+public void testLongDelimiters(){
+————————————————————————————————
+Allow multiple delimiters like this: “//[delim1][delim2]\n” for example (//[*][%]\n1*2%3) should return 6
+@Test
+public void testMultipleDelimiters(){
+————————————————————————————————
+make sure you can also handle multiple delimiters with length longer than one char e.g. (//[***][%%%]\n1***2%%%3)
+@Test
+public void testMultipleLongDelimiters(){
